@@ -24,7 +24,7 @@ parser.add_argument('--eval_every_epoch', dest='eval_every_epoch', default=20, h
 parser.add_argument('--checkpoint_dir', dest='ckpt_dir', default='./checkpoint', help='directory for checkpoints')
 parser.add_argument('--sample_dir', dest='sample_dir', default='./sample', help='directory for evaluating outputs')
 
-parser.add_argument('--save_dir', dest='save_dir', default='./test_results', help='directory for testing outputs')
+parser.add_argument('--save_dir', dest='save_dir', default='./test_results_retinex', help='directory for testing outputs')
 parser.add_argument('--test_dir', dest='test_dir', default='/content/RetinexNet/data/test/low', help='directory for testing inputs')
 parser.add_argument('--decom', dest='decom', default=0, help='decom flag, 0 for enhanced results only and 1 for decomposition results')
 
