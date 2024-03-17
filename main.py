@@ -25,7 +25,7 @@ parser.add_argument('--checkpoint_dir', dest='ckpt_dir', default='./checkpoint',
 parser.add_argument('--sample_dir', dest='sample_dir', default='./sample', help='directory for evaluating outputs')
 
 parser.add_argument('--save_dir', dest='save_dir', default='./test_results', help='directory for testing outputs')
-parser.add_argument('--test_dir', dest='test_dir', default='./data/test/low', help='directory for testing inputs')
+parser.add_argument('--test_dir', dest='test_dir', default='/content/RetinexNet/data/test/low', help='directory for testing inputs')
 parser.add_argument('--decom', dest='decom', default=0, help='decom flag, 0 for enhanced results only and 1 for decomposition results')
 
 args = parser.parse_args()
@@ -42,9 +42,9 @@ def lowlight_train(lowlight_enhance):
     train_low_data = []
     train_high_data = []
 
-    train_low_data_names = glob('./data/our485/low/*.png') + glob('./data/syn/low/*.png')
+    train_low_data_names = glob('/content/data/our485/low/*.png')
     train_low_data_names.sort()
-    train_high_data_names = glob('./data/our485/high/*.png') + glob('./data/syn/high/*.png')
+    train_high_data_names = glob('/content/data/our485/high/*.png')
     train_high_data_names.sort()
     assert len(train_low_data_names) == len(train_high_data_names)
     print('[*] Number of training data: %d' % len(train_low_data_names))
@@ -58,7 +58,7 @@ def lowlight_train(lowlight_enhance):
     eval_low_data = []
     eval_high_data = []
 
-    eval_low_data_name = glob('./data/eval/low/*.*')
+    eval_low_data_name = glob('/content/data/eval15/low/*.*')
 
     for idx in range(len(eval_low_data_name)):
         eval_low_im = load_images(eval_low_data_name[idx])
