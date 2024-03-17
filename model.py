@@ -226,8 +226,8 @@ class lowlight_enhance(object):
         tf.global_variables_initializer().run()
 
         print("[*] Reading checkpoint...")
-        load_model_status_Decom, _ = self.load(self.saver_Decom, './model/Decom')
-        load_model_status_Relight, _ = self.load(self.saver_Relight, './model/Relight')
+        load_model_status_Decom, _ = self.load(self.saver_Decom, '/content/Retinex/model/Decom')
+        load_model_status_Relight, _ = self.load(self.saver_Relight, '/content/Retinex/model/Relight')
         if load_model_status_Decom and load_model_status_Relight:
             print("[*] Load weights successfully...")
         
